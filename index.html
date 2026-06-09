@@ -12,32 +12,78 @@
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6fa; color: #1a1a2e; }
 
     /* HEADER */
-    <header style="background:#111827; width:100%;">
-
-  <!-- Desktop & Mobile Header -->
-  <div style="padding:0 24px; display:flex; align-items:stretch; justify-content:space-between; height:56px; max-width:1200px; margin:0 auto;">
-
-    <!-- Logo + Name -->
-    <div style="display:flex; align-items:center; gap:10px; min-width:0; flex:1;">
-      <img src="https://5.imimg.com/data5/SELLER/Logo/2026/1/578037836/QD/FM/FH/141458379/quantum-logo-thin-120x120.jpeg"
-           alt="Quantum Prime Solutions"
-           style="width:34px; height:34px; border-radius:6px; object-fit:contain; background:white; padding:3px; flex-shrink:0;">
-      <div style="min-width:0;">
-        <div style="font-size:13px; font-weight:700; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">QUANTUM PRIME SOLUTIONS</div>
-        <div style="font-size:9px; color:#f59e0b; letter-spacing:0.5px; white-space:nowrap;">Industrial Procurement Agency · LT / HT</div>
-      </div>
-    </div>
-
-    <!-- Nav — right aligned -->
-    <div style="display:flex; align-items:stretch; gap:0; flex-shrink:0;">
-      <a href="#products" style="color:#f59e0b; font-size:13px; padding:0 16px; display:flex; align-items:center; border-bottom:2px solid #f59e0b; text-decoration:none; white-space:nowrap;">Products</a>
-      <a href="#about" style="color:#9ca3af; font-size:13px; padding:0 16px; display:flex; align-items:center; border-bottom:2px solid transparent; text-decoration:none; white-space:nowrap;">About Us</a>
-      <a href="#contact" style="color:#9ca3af; font-size:13px; padding:0 16px; display:flex; align-items:center; border-bottom:2px solid transparent; text-decoration:none; white-space:nowrap;">Contact</a>
-    </div>
-
-  </div>
-
-</header>
+    .header { background: #1a1a2e; }
+    .header-top-bar {
+      background: #0d0d1a;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #7b8fb5;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .header-main {
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; }
+    .logo-img {
+      width: 56px; height: 56px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: white;
+      padding: 4px;
+    }
+    .brand-text .company-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    .brand-text .company-sub {
+      font-size: 11px;
+      color: #e8c94e;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+    }
+    .wa-btn-header {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    .nav {
+      background: #14142a;
+      padding: 0 24px;
+      display: flex;
+      border-top: 1px solid #2a2a4a;
+    }
+    .nav a {
+      color: #7b8fb5;
+      text-decoration: none;
+      padding: 12px 16px;
+      font-size: 13px;
+      display: block;
+      border-bottom: 2px solid transparent;
+    }
+    .nav a.active { color: #e8c94e; border-bottom-color: #e8c94e; }
+    .nav a:hover { color: #e8c94e; }
 
     /* HERO */
     .hero {
@@ -258,7 +304,22 @@
     /* WA SVG ICON */
     .wa-svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
 
-    
+    /* RESPONSIVE */
+@media (max-width: 600px) {
+      .header-main { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 6px; padding: 10px 12px; }
+      .logo-img { width: 36px; height: 36px; }
+      .brand-text .company-name { font-size: 12px; }
+      .brand-text .company-sub { font-size: 10px; }
+      .wa-btn-header { padding: 7px 10px; font-size: 11px; }
+      .header-top-bar { display: none; }
+      .hero h1 { font-size: 22px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .stats { justify-content: flex-start; }
+      .wa-float { padding: 12px 16px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
 
 <!-- HEADER -->
 <header class="header">
@@ -286,7 +347,7 @@
        alt="Quantum Prime Solutions">
   <div class="hero-sub">Industrial Procurement Agency · LT / HT</div>
   <h1>Quality Electrical Products, Direct to You</h1>
-  <p>Specialized in Electrical Protection Devices. Trusted trader & retailer of Eaton, Schneider,Siemens,ABB,Legrand,Mersen,Anchor,Phoenix,Citel, Crompton, Wipro, Secure, Socomec and more — serving Chennai and beyond.</p>
+  <p>Spezialized in Electrical Protection Devices. Trusted trader & retailer of Eaton, Schneider,Siemens,ABB,Legrand,Mersen,Anchor,Phoenix,Citel, Crompton, Wipro, Secure, Socomec and more — serving Chennai and beyond.</p>
   <a href="https://wa.me/919790626758?text=Hi%2C%20I%20want%20to%20enquire%20about%20your%20electrical%20products"
      class="hero-wa" target="_blank" rel="noopener">
     <svg class="wa-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.535a.5.5 0 0 0 .612.612l5.701-1.47A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.98 0-3.843-.575-5.415-1.57l-.388-.243-3.384.872.888-3.298-.265-.404A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
