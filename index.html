@@ -599,8 +599,7 @@ function renderPriceBoard() {
   var lastDayStr = lastDay.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
 
   document.getElementById('board-month').textContent = monthName;
-  document.getElementById('board-cycle').textContent =
-    daysLeft <= 0 ? 'Valid today only — confirm now' : ('Valid through ' + lastDayStr + ' · ' + daysLeft + ' day' + (daysLeft === 1 ? '' : 's') + ' left this cycle');
+  
 
   var sorted = products.slice().sort(function(a, b) { return a.price - b.price; });
   var visible = Math.min(4, sorted.length);
