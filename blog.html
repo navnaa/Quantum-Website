@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Technical guides on DC SPD selection, PV string fuse sizing, O&M spares stocking and EPD sourcing for solar EPC contractors, panel builders and O&M teams across Tamil Nadu and India.">
+<meta name="keywords" content="solar PV protection devices Chennai, DC SPD supplier India, PV string fuse supplier, solar surge protection device dealer, Mersen fuse distributor India, Citel SPD dealer, Phoenix Contact DC SPD, DC combiner box manufacturer, solar EPC vendor Tamil Nadu, solar panel protection equipment, DC isolator solar, solar O&M spare parts supplier, Type 1 vs Type 2 SPD, gPV fuse sizing, DC SPD Chennai">
+<link rel="canonical" href="https://quantumprimesolutions.com/blog.html">
+<link rel="icon" type="image/jpeg" href="https://5.imimg.com/data5/SELLER/Logo/2026/1/578037836/QD/FM/FH/141458379/quantum-logo-thin-120x120.jpeg">
+<link rel="apple-touch-icon" href="https://5.imimg.com/data5/SELLER/Logo/2026/1/578037836/QD/FM/FH/141458379/quantum-logo-thin-120x120.jpeg">
+<meta property="og:title" content="Resources & Technical Guides | Quantum Prime Solutions">
+<meta property="og:description" content="DC SPD selection, PV string fuse sizing, and O&M sourcing guides for solar EPC contractors and panel builders across India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quantumprimesolutions.com/blog.html">
+<meta property="og:locale" content="en_IN">
+<title>Resources & Technical Guides | Quantum Prime Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1F1C;
+    --panel:#123832;
+    --panel-2:#0E2E29;
+    --amber:#F2A73B;
+    --amber-dim:#B87F26;
+    --circuit:#2E7DA6;
+    --leaf:#4C9A6A;
+    --paper:#F7F4EC;
+    --paper-2:#EFEADB;
+    --ash:#5B6D66;
+    --line:#DDD6C2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'IBM Plex Sans', Arial, sans-serif; background: var(--paper); color: var(--ink); }
+  h1,h2,h3,.display { font-family: 'Space Grotesk', Arial, sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  /* HEADER — copied from index.html */
+  .header { background: var(--ink); }
+  .header-main { padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .logo-wrap { display: flex; align-items: center; gap: 14px; }
+  .logo-img { width: 56px; height: 56px; border-radius: 8px; object-fit: contain; background: white; padding: 4px; }
+  .brand-text .company-name { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+  .brand-text .company-sub { font-size: 11px; color: var(--amber); margin-top: 3px; letter-spacing: 0.5px; }
+  .call-btn-header { background: var(--amber); color: var(--ink); border: none; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; }
+  .nav { background: var(--panel-2); padding: 0 24px; display: flex; border-top: 1px solid #1C4A42; }
+  .nav a { color: #7FA89E; text-decoration: none; padding: 12px 16px; font-size: 13px; display: block; border-bottom: 2px solid transparent; }
+  .nav a.active { color: var(--amber); border-bottom-color: var(--amber); }
+  .nav a:hover { color: var(--amber); }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: radial-gradient(circle at 85% 15%, rgba(242,167,59,0.16), transparent 45%),
+      linear-gradient(150deg, var(--ink) 0%, var(--panel) 60%, #0F332E 100%);
+    padding: 44px 24px 40px;
+    color: white;
+  }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .hero-eyebrow { color: var(--amber); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+  .page-hero h1 { font-size: 30px; font-weight: 700; line-height: 1.25; margin-bottom: 12px; color: white; max-width: 720px; }
+  .page-hero p { color: #B9CFC8; font-size: 14.5px; max-width: 620px; line-height: 1.7; }
+
+  /* MAIN / SECTION — reused from index.html */
+  .main { padding: 32px 24px; max-width: 1200px; margin: 0 auto; }
+  .section-head { margin-bottom: 24px; }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--ink); }
+  .section-sub { font-size: 13px; color: var(--ash); margin-top: 4px; }
+  .divider { width: 44px; height: 3px; background: var(--amber); margin-top: 10px; border-radius: 2px; }
+
+  /* ARTICLE CARDS — same visual language as .product-card */
+  .articles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .article-card {
+    background: white; border: 1px solid var(--line); border-radius: 10px;
+    overflow: hidden; transition: box-shadow 0.2s, transform 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .article-card:hover { box-shadow: 0 8px 24px rgba(11,31,28,0.12); transform: translateY(-2px); }
+  .article-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+  .article-cat-tag {
+    display: inline-block; font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.6px; color: var(--circuit); background: #E7F1F6;
+    padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; width: fit-content;
+  }
+  .article-title { font-size: 15.5px; font-weight: 600; margin: 0 0 8px; line-height: 1.4; color: var(--ink); }
+  .article-title a { color: var(--ink); text-decoration: none; }
+  .article-title a:hover { color: var(--panel); }
+  .article-excerpt { font-size: 12.5px; color: var(--ash); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+  .article-meta { font-size: 11px; color: #8A9490; border-top: 1px solid var(--line); padding-top: 10px; font-family: 'IBM Plex Mono', monospace; }
+
+  /* POST DETAIL */
+  .post {
+    background: white; border: 1px solid var(--line); border-radius: 10px;
+    padding: 28px 26px; margin-top: 28px; scroll-margin-top: 20px;
+  }
+  .post .article-cat-tag { margin-bottom: 10px; }
+  .post h2 { font-size: 22px; margin: 0 0 6px; color: var(--ink); }
+  .post .read-meta { font-size: 11px; color: var(--ash); font-family: 'IBM Plex Mono', monospace; margin-bottom: 18px; letter-spacing: 0.5px; }
+  .post p { font-size: 14.5px; color: #333; line-height: 1.75; margin: 0 0 14px; }
+  .post h3 { font-size: 15.5px; margin: 20px 0 8px; color: var(--panel); }
+  .post ul { margin: 0 0 14px; padding-left: 20px; }
+  .post li { font-size: 14.5px; color: #333; line-height: 1.7; margin-bottom: 6px; }
+  .spec-note {
+    background: var(--paper-2); border-left: 3px solid var(--circuit);
+    padding: 12px 16px; font-size: 12.5px; color: var(--ash);
+    font-family: 'IBM Plex Mono', monospace; margin: 16px 0; border-radius: 0 6px 6px 0;
+  }
+  .cta-inline {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+    padding: 11px 22px; background: var(--amber); color: var(--ink);
+    text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 6px;
+  }
+  .back-top { display: block; text-align: right; font-size: 12px; margin-top: 16px; color: var(--circuit); text-decoration: none; }
+  .back-top:hover { text-decoration: underline; }
+
+  /* FOOTER — copied from index.html */
+  .footer { background: var(--ink); color: #7FA89E; padding: 26px 24px; margin-top: 32px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 16px; max-width: 780px; }
+  .footer h4 { color: var(--amber); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+  .footer p, .footer a { font-size: 12.5px; color: #7FA89E; line-height: 1.65; text-decoration: none; display: block; }
+  .footer a:hover { color: var(--amber); }
+  .footer .wa-link { color: #25D366 !important; }
+  .footer-bottom { border-top: 1px solid #1C4A42; padding-top: 12px; font-size: 11px; text-align: center; color: #486760; }
+
+  @media (max-width: 600px) {
+    .header-main { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .page-hero h1 { font-size: 24px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .post { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-main">
+    <div class="logo-wrap">
+      <img class="logo-img"
+           src="https://5.imimg.com/data5/SELLER/Logo/2026/1/578037836/QD/FM/FH/141458379/quantum-logo-thin-120x120.jpeg"
+           alt="Quantum Prime Solutions Logo">
+      <div class="brand-text">
+        <div class="company-name">QUANTUM PRIME SOLUTIONS</div>
+        <div class="company-sub">Solar PV Protection Devices (EPD)</div>
+      </div>
+    </div>
+    <a href="tel:+914431701769" class="call-btn-header">📞 +91 044 3170 1769</a>
+  </div>
+  <nav class="nav">
+    <a href="index.html#products">Products</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#certifications">Certifications</a>
+    <a href="index.html#about">About Us</a>
+    <a href="blog.html" class="active">Resources</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Technical Resources</div>
+    <h1>Solar PV protection device guides for EPC contractors and O&M teams.</h1>
+    <p>DC SPD selection, PV string fuse sizing, and sourcing guidance — written for buyers specifying and maintaining solar PV DC/AC protection across Tamil Nadu and India.</p>
+  </div>
+</section>
+
+<!-- ARTICLE INDEX -->
+<div class="main" id="resources">
+  <div class="section-head">
+    <div class="section-title">Latest Guides</div>
+    <div class="section-sub">Practical, spec-level notes — not vendor brochures</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="articles">
+
+    <div class="article-card">
+      <div class="article-body">
+        <div class="article-cat-tag">DC SPD Selection</div>
+        <h3 class="article-title"><a href="#post-1">How to Select the Right DC SPD for a 1500V Solar String</a></h3>
+        <p class="article-excerpt">A working checklist for matching SPD type, voltage class and discharge current to your string design before you order.</p>
+        <div class="article-meta">7 MIN READ</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-body">
+        <div class="article-cat-tag">Standards & Spec</div>
+        <h3 class="article-title"><a href="#post-2">Type 1 vs Type 2 SPD: Which Does Your EPC Project Need?</a></h3>
+        <p class="article-excerpt">The difference isn't marketing — it's where the SPD sits in your lightning protection zone.</p>
+        <div class="article-meta">6 MIN READ</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-body">
+        <div class="article-cat-tag">Fuse Sizing</div>
+        <h3 class="article-title"><a href="#post-3">PV String Fuse Sizing Guide for Indian Solar Installations</a></h3>
+        <p class="article-excerpt">Isc, safety margins and IEC 60269 basics for sizing gPV fuses correctly across string configurations.</p>
+        <div class="article-meta">6 MIN READ</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-body">
+        <div class="article-cat-tag">Tamil Nadu Solar</div>
+        <h3 class="article-title"><a href="#post-4">Top Causes of DC-Side Surge Damage in Tamil Nadu Solar Plants</a></h3>
+        <p class="article-excerpt">Coastal lightning density, monsoon transients and grounding gaps — what's actually driving SPD replacements.</p>
+        <div class="article-meta">5 MIN READ</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-body">
+        <div class="article-cat-tag">O&M</div>
+        <h3 class="article-title"><a href="#post-5">O&amp;M Checklist: When to Replace SPDs and Fuses in a Running Plant</a></h3>
+        <p class="article-excerpt">Visual indicators, end-of-life signals and a stocking checklist so spares are on hand before a fault hits.</p>
+        <div class="article-meta">5 MIN READ</div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-body">
+        <div class="article-cat-tag">Procurement</div>
+        <h3 class="article-title"><a href="#post-6">Sourcing Mersen, Citel &amp; Phoenix Contact EPDs in India</a></h3>
+        <p class="article-excerpt">What EPCs should ask a trading house before placing a bulk protection-device order.</p>
+        <div class="article-meta">6 MIN READ</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ POST 1 ============ -->
+  <div class="post" id="post-1">
+    <div class="article-cat-tag">DC SPD Selection</div>
+    <h2>How to Select the Right DC SPD for a 1500V Solar String</h2>
+    <div class="read-meta">7 MIN READ · UPDATED 2026</div>
+
+    <p>Choosing a DC surge protection device sounds straightforward until you're staring at a datasheet with six voltage ratings and three discharge current specs. For EPC contractors and panel builders sourcing protection devices in bulk, getting this wrong means field returns, warranty disputes, or an SPD that fails to clamp during the next lightning season.</p>
+
+    <h3>Start with system voltage, not panel voltage</h3>
+    <p>Your SPD's maximum continuous operating voltage (Ucpv) must exceed the string's open-circuit voltage at the coldest expected temperature, not the nominal Vmp. On a 1500V DC system this typically pushes you toward SPDs rated 1500–1800V Ucpv, even though the string "runs" closer to 1350V under load. Undersizing here is the single most common cause of premature SPD failure we see in field returns from Tamil Nadu plants.</p>
+
+    <div class="spec-note">Rule of thumb: Ucpv ≥ 1.2 × Voc(STC), corrected for minimum site temperature.</div>
+
+    <h3>Match discharge current (Iimp/In) to lightning exposure</h3>
+    <p>Combiner boxes on exposed rooftop or ground-mount arrays in high isokeraunic zones need Type 1+2 devices with a higher Iimp rating. Inverter-side protection, closer to the building's main lightning protection system, can often run on Type 2 alone. Don't over-spec every location the same way — it inflates cost without adding protection where the exposure doesn't justify it.</p>
+
+    <h3>Check remote monitoring requirements early</h3>
+    <p>If your O&amp;M contract requires SCADA-visible SPD status, confirm the device has a remote signalling contact before ordering — retrofitting monitored SPDs into an already-wired combiner box is expensive.</p>
+
+    <a class="cta-inline" href="https://wa.me/919790626758?text=Hi%2C%20I%20want%20help%20selecting%20a%20DC%20SPD%20for%20my%20project">💬 Get an SPD spec recommendation</a>
+    <a class="back-top" href="#resources">↑ Back to all guides</a>
+  </div>
+
+  <!-- ============ POST 2 ============ -->
+  <div class="post" id="post-2">
+    <div class="article-cat-tag">Standards & Spec</div>
+    <h2>Type 1 vs Type 2 SPD: Which Does Your EPC Project Need?</h2>
+    <div class="read-meta">6 MIN READ · UPDATED 2026</div>
+
+    <p>"Type 1 or Type 2?" is one of the most common questions we get from panel builders quoting a new solar project. The answer depends entirely on where the SPD sits relative to the building's lightning protection zones (LPZ) — not on project size or budget.</p>
+
+    <h3>Type 1 (Class I)</h3>
+    <p>Required where there's a direct or nearby lightning strike risk — typically at the boundary between LPZ 0 and LPZ 1, such as the main DC combiner feeding into a building with an external lightning protection system. Type 1 SPDs handle partial lightning current (Iimp, tested with a 10/350µs waveform).</p>
+
+    <h3>Type 2 (Class II)</h3>
+    <p>Used within LPZ 1 or deeper — at string combiner boxes, sub-distribution, and inverter DC input, where induced surges rather than direct strikes are the concern. Rated for nominal discharge current (In, 8/20µs waveform), Type 2 devices are more common across the majority of a solar plant's DC architecture.</p>
+
+    <h3>Type 1+2 combined devices</h3>
+    <p>Many solar-specific SPDs — like the Citel and Mersen ranges we supply — combine both functions in a single device, simplifying specification for combiner boxes that sit at the LPZ 0/1 boundary without a separate external LPS.</p>
+
+    <div class="spec-note">Quick check: if the array has a dedicated external lightning protection system nearby, you likely need Type 1 at the point of entry. If not, Type 2 across the DC side is usually sufficient — confirm against your LPS risk assessment.</div>
+
+    <a class="cta-inline" href="https://wa.me/919790626758?text=Hi%2C%20I%20need%20help%20choosing%20Type%201%20vs%20Type%202%20SPD">💬 Ask us to review your single-line diagram</a>
+    <a class="back-top" href="#resources">↑ Back to all guides</a>
+  </div>
+
+  <!-- ============ POST 3 ============ -->
+  <div class="post" id="post-3">
+    <div class="article-cat-tag">Fuse Sizing</div>
+    <h2>PV String Fuse Sizing Guide for Indian Solar Installations</h2>
+    <div class="read-meta">6 MIN READ · UPDATED 2026</div>
+
+    <p>String fuse sizing errors are quietly expensive — undersized fuses nuisance-trip and cost you truck rolls; oversized fuses fail to protect the module and cable in a genuine fault condition. Here's the sizing logic we walk EPC buyers through.</p>
+
+    <h3>The core sizing rule</h3>
+    <p>PV string fuses (gPV rated, per IEC 60269-6) are generally sized between 1.4× and 2.4× the short-circuit current (Isc) of the string, depending on the number of parallel strings and the module manufacturer's maximum series fuse rating — check the module datasheet, this is a hard ceiling.</p>
+
+    <ul>
+      <li><strong>Fewer than 3 parallel strings per combiner:</strong> fusing is often not required by design — check local code</li>
+      <li><strong>3+ parallel strings:</strong> fusing becomes necessary to protect against reverse current in a fault condition</li>
+      <li><strong>Voltage rating:</strong> must meet or exceed system Voc at minimum temperature — 1000V and 1500V DC fuse families are not interchangeable</li>
+    </ul>
+
+    <h3>Interrupt rating matters as much as current rating</h3>
+    <p>A fuse rated for the right current but with an inadequate breaking capacity (I.R.) can fail to clear a fault safely. Most quality gPV fuses in the Indian market — Mersen's HP10M and HP15M ranges, for example — carry 50kA short-circuit current ratings; confirm this explicitly rather than assuming.</p>
+
+    <div class="spec-note">Never exceed the module manufacturer's stated maximum series fuse rating, even if your Isc calculation allows for a higher value.</div>
+
+    <a class="cta-inline" href="https://wa.me/919790626758?text=Hi%2C%20I%20need%20help%20sizing%20PV%20string%20fuses">💬 Send your string configuration for a fuse recommendation</a>
+    <a class="back-top" href="#resources">↑ Back to all guides</a>
+  </div>
+
+  <!-- ============ POST 4 ============ -->
+  <div class="post" id="post-4">
+    <div class="article-cat-tag">Tamil Nadu Solar</div>
+    <h2>Top Causes of DC-Side Surge Damage in Tamil Nadu Solar Plants</h2>
+    <div class="read-meta">5 MIN READ · UPDATED 2026</div>
+
+    <p>Tamil Nadu's solar operators deal with a specific combination of exposure factors — coastal thunderstorm activity, a long pre-monsoon lightning season, and large open ground-mount arrays with minimal natural shielding. Here's what we consistently see driving DC-side surge failures across the O&amp;M contracts we support.</p>
+
+    <h3>1. Induced surges from nearby strikes, not direct hits</h3>
+    <p>Most failures aren't from a direct strike on the array itself — they're induced transients from strikes within a few hundred metres, traveling through DC cabling into combiner boxes. This is exactly what Type 2 SPDs are designed to clamp, but only if they're rated correctly for the site's exposure level.</p>
+
+    <h3>2. Undersized or expired SPDs left in service</h3>
+    <p>Varistor-based SPDs degrade with each surge event they absorb — they don't fail cleanly. A plant running on original commissioning-date SPDs five years on, without a replacement cycle, is running on protection that's already partially depleted.</p>
+
+    <h3>3. Grounding and bonding gaps</h3>
+    <p>An SPD is only as effective as its earth path. Loose or corroded grounding connections at combiner boxes — common in coastal humidity — increase the residual voltage let-through even when the SPD itself is functioning.</p>
+
+    <h3>4. Monsoon-season inverter trips traced back to DC surge, not AC</h3>
+    <p>O&amp;M teams often diagnose inverter trips as AC-side or grid issues first. A meaningful share of these, in our experience supplying replacement parts, trace back to a degraded or blown DC SPD not caught during routine inspection.</p>
+
+    <a class="cta-inline" href="https://wa.me/919790626758?text=Hi%2C%20I%20want%20to%20discuss%20SPD%20replacement%20for%20my%20plant">💬 Talk to us about an SPD health-check</a>
+    <a class="back-top" href="#resources">↑ Back to all guides</a>
+  </div>
+
+  <!-- ============ POST 5 ============ -->
+  <div class="post" id="post-5">
+    <div class="article-cat-tag">O&M</div>
+    <h2>O&amp;M Checklist: When to Replace SPDs and Fuses in a Running Plant</h2>
+    <div class="read-meta">5 MIN READ · UPDATED 2026</div>
+
+    <p>Reactive replacement — swapping an SPD only after a fault — costs more in downtime than a stocked, scheduled replacement cycle. Here's a practical checklist for O&amp;M teams managing DC protection devices across a solar portfolio.</p>
+
+    <h3>Visual indicators to check on every site visit</h3>
+    <ul>
+      <li>Status window on the SPD showing red/green indication — a red window means immediate replacement, not "next visit"</li>
+      <li>Discoloration, bulging, or heat marks on the SPD housing</li>
+      <li>Blown fuse indicator flags on string fuse holders</li>
+      <li>Corrosion at combiner box grounding lugs</li>
+    </ul>
+
+    <h3>Stocking spares before you need them</h3>
+    <p>The plants with the least downtime keep a small buffer stock of the exact SPD and fuse models in use on-site — matched by voltage class and manufacturer — rather than ordering after a fault is discovered. For multi-site O&amp;M contracts, standardizing on 2-3 SPD models across the portfolio also simplifies spares management significantly.</p>
+
+    <h3>Suggested replacement cadence</h3>
+    <p>In the absence of visible failure, many operators budget for SPD replacement on a 5-7 year cycle for high-exposure sites, longer for lower-risk locations — but a status-indicator check should override any fixed calendar cycle.</p>
+
+    <a class="cta-inline" href="https://wa.me/919790626758?text=Hi%2C%20I%27d%20like%20to%20set%20up%20a%20spares%20stocking%20plan%20for%20O%26M">💬 Talk to us about O&amp;M spares stocking</a>
+    <a class="back-top" href="#resources">↑ Back to all guides</a>
+  </div>
+
+  <!-- ============ POST 6 ============ -->
+  <div class="post" id="post-6">
+    <div class="article-cat-tag">Procurement</div>
+    <h2>Sourcing Mersen, Citel &amp; Phoenix Contact EPDs in India: A Buyer's Guide</h2>
+    <div class="read-meta">6 MIN READ · UPDATED 2026</div>
+
+    <p>For EPC contractors and panel builders sourcing branded protection devices in India, the sourcing route matters almost as much as the spec sheet. Here's what to check before placing a bulk order with any trading house or distributor.</p>
+
+    <h3>Stock vs. import lead time</h3>
+    <p>Ask whether the specific model is held in Indian stock or imported to order. Solar EPC schedules rarely tolerate 8-10 week import lead times on a protection device — confirm stock availability against your actual commissioning date, not a generic "in stock" claim.</p>
+
+    <h3>Authorized channel vs. grey market</h3>
+    <p>Genuine Mersen, Citel, Finder, Phoenix Contact and Havells devices come with manufacturer warranty support and traceable batch/serial documentation. Grey-market imports often can't provide this, which becomes a real problem if a claim needs to be filed.</p>
+
+    <h3>Compliance paperwork for large projects</h3>
+    <p>For projects requiring GST-compliant billing, IEC-registered import documentation, or MSME/Udyam vendor registration for tender eligibility, confirm your supplier holds these before quoting stage, not after PO issuance.</p>
+
+    <div class="spec-note">Quantum Prime Solutions is GSTIN, IEC and Udyam (MSME) registered, RCMC-certified under EEPC India, and TReDS registered — documentation available on request for tender and vendor empanelment purposes.</div>
+
+    <a class="cta-inline" href="https://wa.me/919790626758?text=Hi%2C%20I%27d%20like%20a%20bulk%20quote%20and%20vendor%20documentation">💬 Request a bulk quote and vendor documentation</a>
+    <a class="back-top" href="#resources">↑ Back to all guides</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div>
+      <h4>Quantum Prime Solutions</h4>
+      <p>1/4, First Floor,</p>
+      <p>Plot No 165, New No 147,</p>
+      <p>Sri Devi Karumariamman Nagar,</p>
+      <p>NSK Salai, Arcot Road,</p>
+      <p>Valasaravakkam,</p>
+      <p>Chennai – 600087, Tamil Nadu, India</p>
+      <p style="margin-top:10px; font-size:12px; color:#4a6a62;">GST: 33**********2Z9</p>
+      <a href="https://www.google.com/maps/dir//Quantum+Prime+Solutions,+NSK+Salai,+1%2F4,FIRST+FLOOR,NO+165+,+NEW+NO+147,SRI+DEVI+KARUMARI+AMMAN+NAGAR,+Arcot+Rd,+Valasaravakkam,+Chennai,+Tamil+Nadu+600087/@13.022006,80.1502683,13.19z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a5261abcad65c41:0xc509ae39cf26e7f0!2m2!1d80.2085124!2d13.0490237?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="color:var(--amber); font-size:12px; margin-top:6px;">📍 Get Directions on Google Maps</a>
+      <p style="font-size:12px; color:#4a6a62;">N R — Marketing Manager</p>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p>📧 sales@quantumprimesolutions.com</p>
+      <a href="tel:+914431701769">📞 +91 044 3170 1769</a>
+      <a href="https://wa.me/919790626758?text=Hi%2C%20I%27m%20interested%20in%20your%20solar%20PV%20protection%20devices"
+         target="_blank" rel="noopener" class="wa-link">💬 WhatsApp: +91 97906 26758</a>
+      <a href="https://www.indiamart.com/quantumprimesolutions-chennai/"
+         target="_blank" rel="noopener">🔗 View on IndiaMart</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 QUANTUM PRIME SOLUTIONS · Solar PV Protection Devices (EPD) · All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
